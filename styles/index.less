@@ -43,12 +43,14 @@
         font-size: 1.3em;
 
         text-align: center;
-        margin: 16px;
 
         width: max-content;
         min-width: calc(100% - 64px);
 
         padding: 16px;
+
+        position: relative;
+        top: calc(50% - 2em);
     }
 
     .container {
@@ -121,10 +123,6 @@
             box-shadow: @shadowDisplayBox;
 
             overflow: auto;
-
-            display: flex;
-            flex-direction: row;
-            align-items: center;
         }
 
         >h2 {
