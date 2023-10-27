@@ -4,7 +4,9 @@
   "description": "a calculator eo get the expansion of (a+b)^n",
   "main": "index.ts",
   "scripts": {
-    "test": "vite"
+    "test": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "author": "anson",
   "license": "MIT",
