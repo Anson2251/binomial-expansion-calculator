@@ -1,8 +1,8 @@
-export namespace bnmlExpCalc_util {
+export namespace utils {
     interface termOfBinExp {
-        aExp: number;
-        bExp: number;
-        coeff: number
+        exponentA: number;
+        exponentB: number;
+        coefficient: number
     }
 
     /**
@@ -52,13 +52,13 @@ export namespace bnmlExpCalc_util {
      * @param {number} exp - the exponent of the binomial expression
      * @return {termOfBinExp[]} an array of objects representing the expanded terms of the binomial expression
      */
-    export function expandBinomialExp(exp: number): termOfBinExp[]{
+    export function getBinomialExpansion(exp: number): termOfBinExp[]{
         const coeffs = buildLayerOfPascalTri(exp);
         const expansion: termOfBinExp[] = new Array(exp+1).fill(null).map((v, i) => {
             const term: termOfBinExp = {
-                aExp: exp-i,
-                bExp: i,
-                coeff: coeffs[i]
+                exponentA: exp-i,
+                exponentB: i,
+                coefficient: coeffs[i]
             };
             return term;
         }); 
@@ -67,3 +67,5 @@ export namespace bnmlExpCalc_util {
     }
 
 }
+
+export default utils;
