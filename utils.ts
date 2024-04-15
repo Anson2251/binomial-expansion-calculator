@@ -53,9 +53,9 @@ export namespace bnmlExpCalc_util {
      * @return {termOfBinExp[]} an array of objects representing the expanded terms of the binomial expression
      */
     export function expandBinomialExp(exp: number): termOfBinExp[]{
-        let coeffs = buildLayerOfPascalTri(exp);
-        let expansion: termOfBinExp[] = new Array(exp+1).fill(null).map((v, i) => {
-            let term: termOfBinExp = {
+        const coeffs = buildLayerOfPascalTri(exp);
+        const expansion: termOfBinExp[] = new Array(exp+1).fill(null).map((v, i) => {
+            const term: termOfBinExp = {
                 aExp: exp-i,
                 bExp: i,
                 coeff: coeffs[i]

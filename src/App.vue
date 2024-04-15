@@ -6,9 +6,8 @@ import binomialExpansion from "./components/binomialExpansion.vue";
 let exponent = ref(0)
 
 function parent(num: number){
-  exponent.value = num
+  exponent.value = num;
 }
-
 </script>
 
 <template>
