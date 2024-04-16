@@ -1,19 +1,29 @@
 <script setup>
-import { ref, watch } from "vue"
+import { ref, watch, defineProps } from "vue"
 
 const emit = defineEmits(['getExpo'])
-let exponent = ref(null);
+// let exponentLocal = ref(null);
 
-watch(exponent, () => {
-    const num = exponent.value !== "" ? Number(exponent.value) : -1;
+const props = defineProps({
+    exponent: Number
+})
+
+const exponentLocal = ref(props.exponent);
+
+watch(exponentLocal, () => {
+    const num = exponentLocal.value !== "" ? Number(exponentLocal.value) : -1;
     emit('getExpo', num)
+})
+
+watch(props, () => {
+    if(props.exponent >= 0) exponentLocal.value = props.exponent
 })
 </script>
 
 <template>
     <label class=expressionLabel>
         <p class=description>Exponent:</p>
-        <input v-model=exponent type=number id=exponentInput />
+        <input v-model=exponentLocal type=number id=exponentInput />
     </label>
 </template>
 

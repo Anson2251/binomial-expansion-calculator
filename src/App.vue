@@ -12,8 +12,8 @@ const updateExponent = (num: number) => exponent.value = num
 <template>
 	<div class=container>
 		<h2 class=title>Expand Binomial Expression</h2>
-		<exponentInput @getExpo="updateExponent" />
-		<binomialExpansion :exponent="exponent" />
+		<exponentInput :exponent="exponent" @getExpo="updateExponent" />
+		<binomialExpansion :exponent="exponent" @getExpo="updateExponent"/>
 	</div>
 </template>
 
@@ -41,6 +41,8 @@ const updateExponent = (num: number) => exponent.value = num
 	display: block;
 
 	overflow: hidden;
+	white-space: nowrap;
+	overflow-x: scroll;
 
 	grid-column: 1 / 2;
 	grid-row: 1;
