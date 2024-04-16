@@ -31,7 +31,7 @@ const props = defineProps({
     exponent: Number
 })
 
-const greatExponentWarning = "Too big exponent, it may cause a lot of time to calculate. \n\nAre you sure you want to continue?";
+const greatExponentWarning = "A huge exponent! A lot of terms will be displayed and it will take a long time to calculate \n\n Continue?";
 
 watch(props, () => {
     if (props.exponent && props.exponent > 0) {
