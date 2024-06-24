@@ -33,6 +33,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Configure environment
+        run: "npm install @rollup/rollup-linux-x64-gnu"
+
       - name: Install dependencies
         run: "npm install"
 
